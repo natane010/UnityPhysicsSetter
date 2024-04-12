@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -200,7 +199,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime.Tool
             }
 
         }
-        public static void GenerateBoneChainImporter(Transform transform, List<string> generateKeyWordWhiteList, List<string> generateKeyWordBlackList, List<Transform> blackListOfGenerateTransform, ADBSettingLinker settings,ref List<ADBChainProcessor> chainProcessors)//OYM��һ���ށE�µķ���
+        public static void GenerateBoneChainImporter(Transform transform, List<string> generateKeyWordWhiteList, List<string> generateKeyWordBlackList, List<Transform> blackListOfGenerateTransform, ADBSettingLinker settings,ref List<ADBChainProcessor> chainProcessors)//OYM｣ｺﾒｻｸﾞ・狡ｵﾄｷｽｷｨ
         {
             if (transform == null||
                 (transform.TryGetComponent<ADBRuntimePoint>(out ADBRuntimePoint point)&&!point.isRoot)) return ;

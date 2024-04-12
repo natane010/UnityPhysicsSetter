@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
-using System.ComponentModel;
-using UnityEngine.SceneManagement;
 
 namespace TKPhysics.AutomaticDynamicBone.Runtime
 {

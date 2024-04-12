@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.Jobs;
-using Unity.Collections;
 
 namespace TKPhysics
 {

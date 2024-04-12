@@ -1,7 +1,4 @@
-﻿using TKPhysics.AutomaticDynamicBone.Runtime;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace TKPhysics.AutomaticDynamicBone.Runtime
