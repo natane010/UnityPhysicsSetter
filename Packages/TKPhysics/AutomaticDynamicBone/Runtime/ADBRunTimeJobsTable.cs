@@ -15,7 +15,7 @@ namespace TKPhysics.Internal
     {
         #region Jobs
         [BurstCompile]
-        public struct InitiralizePoint1 : IJobParallelForTransform //OYM:先更新fixed节点
+        public struct InitiralizePoint1 : IJobParallelForTransform
 
         {
             [ReadOnly, NativeDisableUnsafePtrRestriction]
