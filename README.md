@@ -12,3 +12,5 @@ Unity2022.3系での動作しか確認していません。
 　コライダーを自動生成
 ・ADBChainGenerateTool
 　つながりを自動生成。
+
+https://github.com/natane010/UnityPhysicsSetter.git?path=/Packages/TKPhysics
