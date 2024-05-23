@@ -49,7 +49,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
      
 
-        private void OnEnable()
+        private void Start()
         {
             if (!isDebug)
             {
@@ -223,7 +223,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
         public void ResetData()
         {
             RestoreRuntimePoint();
-            OnEnable();
+            Start();
 
         }
         public int GetPointCount()

@@ -93,7 +93,13 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
 
         private int id;
-        
+
+        public void Start()
+        {
+            isReadOnly |= gameObject.isStatic;
+            isStatic |= gameObject.isStatic;
+            initialSize = transform.localScale;
+        }
 
         public void FixedUpdate()
         {
@@ -110,10 +116,6 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
         private void OnEnable()
         {
-            
-            isReadOnly |= gameObject.isStatic;
-            isStatic |= gameObject.isStatic;
-            initialSize = transform.localScale;
             CheckAndBuildADBRuntimeCollider();
         }
 
