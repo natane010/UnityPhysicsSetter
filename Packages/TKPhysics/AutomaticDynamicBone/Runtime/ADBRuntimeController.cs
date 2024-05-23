@@ -49,7 +49,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
      
 
-        private void Start()
+        private void OnEnable()
         {
             if (!isDebug)
             {
