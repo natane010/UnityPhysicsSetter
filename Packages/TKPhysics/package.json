@@ -1,6 +1,6 @@
 {
   "name": "tk.unity.physics_bone_package",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "displayName": "CustomPhysicsBone",
   "description": "This is a Physics Bone package",
   "unity": "2022.3"
