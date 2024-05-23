@@ -223,7 +223,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
         public void ResetData()
         {
             RestoreRuntimePoint();
-            Start();
+            OnEnable();
 
         }
         public int GetPointCount()
