@@ -94,7 +94,7 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
         private int id;
 
-        public void Start()
+        public void OnEnable()
         {
             isReadOnly |= gameObject.isStatic;
             isStatic |= gameObject.isStatic;
