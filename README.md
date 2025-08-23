@@ -13,4 +13,4 @@ Unity2022.3系での動作しか確認していません。
 ・ADBChainGenerateTool
 　つながりを自動生成。
 
-https://github.com/natane010/UnityPhysicsSetter.git?path=/Packages/TKPhysics
+https://github.com/natane010/UnityPhysicsSetter.git?path=/Packages/NatanePhysics
