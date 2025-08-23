@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TKPhysics.AutomaticDynamicBone.Runtime.Tool;
+using NatanePhysics.AutomaticDynamicBone.Runtime.Tool;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Editor
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Editor
 {
     using Runtime.Tool;
     public enum ChainGeneratorModeCN

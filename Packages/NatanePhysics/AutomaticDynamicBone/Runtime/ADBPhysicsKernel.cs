@@ -5,14 +5,15 @@ using Unity.Collections.LowLevel.Unsafe;
 using System.Collections.Generic;
 using Unity.Jobs;
 using System;
-using ADBRunTimeJobsTable = TKPhysics.Internal.ADBRunTimeJobsTable;
+using ADBRunTimeJobsTable = NatanePhysics.Internal.ADBRunTimeJobsTable;
+using Internal_ADBRunTimeJobsTable = NatanePhysics.Internal.ADBRunTimeJobsTable;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     using Internal;
     using AutomaticDynamicBone.Runtime;
     using System.Linq;
-    using static ADBRunTimeJobsTable;
+    using static Internal_ADBRunTimeJobsTable;
 
     public unsafe class ADBPhysicsKernel
     {

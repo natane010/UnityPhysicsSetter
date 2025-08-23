@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
-using TKPhysics.AutomaticDynamicBone.Runtime;
+using NatanePhysics.AutomaticDynamicBone.Runtime;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
 
     [CreateAssetMenu(fileName = "ADBSettingFile", menuName = "ADB/ADBSettingFile")]

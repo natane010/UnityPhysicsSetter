@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using System;
-namespace TKPhysics
+namespace NatanePhysics
 {
     [Serializable]
     public struct PointRead

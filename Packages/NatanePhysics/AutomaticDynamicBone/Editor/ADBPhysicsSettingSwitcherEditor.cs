@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Editor
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Editor
 {
     using Runtime;
     [CustomEditor(typeof(ADBPhysicsSettingSwitcher))]

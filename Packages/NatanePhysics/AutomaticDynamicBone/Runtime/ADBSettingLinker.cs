@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     [CreateAssetMenu(fileName = "ADBSettingLinker", menuName = "ADB/ADBSettingLinker")]
     public class ADBSettingLinker : ScriptableObject

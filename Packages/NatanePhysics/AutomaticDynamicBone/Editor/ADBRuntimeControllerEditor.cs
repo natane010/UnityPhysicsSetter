@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Editor
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Editor
 {
     using Runtime;
     public enum ColliderCollisionTypeZh

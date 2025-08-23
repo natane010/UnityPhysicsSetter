@@ -2,7 +2,7 @@
 using System;
 using Unity.Mathematics;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     public enum ColliderType
     {

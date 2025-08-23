@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime
+namespace NatanePhysics.AutomaticDynamicBone.Runtime
 {
     [RequireComponent(typeof(ADBRuntimeController))]
     public class ADBPhysicsSettingSwitcher : MonoBehaviour

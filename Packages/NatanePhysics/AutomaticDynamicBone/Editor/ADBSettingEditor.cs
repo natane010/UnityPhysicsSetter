@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Editor
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Editor
 {
     [CustomEditor(typeof(ADBPhysicsSetting))]
     public class ADBSettingFileEditor : UnityEditor.Editor

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime
+namespace NatanePhysics.AutomaticDynamicBone.Runtime
 {
     public class ADBChainProcessor: ADBRuntimePoint, IADBPhysicMonoComponent
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System;
-using TKPhysics.AutomaticDynamicBone.Runtime.Tool;
+using NatanePhysics.AutomaticDynamicBone.Runtime.Tool;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Editor
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Editor
 {
     using Runtime;
     using Runtime.Tool;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     using AutomaticDynamicBone.Runtime;
     public enum ConstraintType

@@ -9,7 +9,7 @@ using Unity.Burst;
 using Unity.Mathematics;
 using System.Runtime.CompilerServices;
 
-namespace TKPhysics.Internal
+namespace NatanePhysics.Internal
 {
     public static unsafe class ADBRunTimeJobsTable
     {

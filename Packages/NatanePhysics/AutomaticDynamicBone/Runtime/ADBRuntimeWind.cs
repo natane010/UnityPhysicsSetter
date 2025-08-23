@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     public class ADBRuntimeWind
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-namespace TKPhysics.AutomaticDynamicBone.Runtime
+namespace NatanePhysics.AutomaticDynamicBone.Runtime
 {
     public struct ColliderChecker:IEquatable<UnityEngine.SphereCollider>,IEquatable<UnityEngine.CapsuleCollider>, IEquatable<UnityEngine.BoxCollider>
     {

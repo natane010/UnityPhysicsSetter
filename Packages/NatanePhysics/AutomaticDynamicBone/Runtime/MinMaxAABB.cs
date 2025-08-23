@@ -2,7 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     [System.Serializable]
     public struct MinMaxAABB : IEquatable<MinMaxAABB>

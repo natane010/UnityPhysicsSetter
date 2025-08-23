@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Tool
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Tool
 {
     public enum ChainGeneratorMode
     {

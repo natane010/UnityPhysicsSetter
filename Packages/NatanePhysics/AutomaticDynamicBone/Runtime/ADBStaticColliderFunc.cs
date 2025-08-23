@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace TKPhysics
+namespace NatanePhysics
 {
     using AutomaticDynamicBone.Runtime;
     using Unity.Mathematics;

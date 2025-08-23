@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime.Tool
+namespace NatanePhysics.AutomaticDynamicBone.Runtime.Tool
 {
     [DisallowMultipleComponent]
     public class ADBColliderGenerateTool : MonoBehaviour

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Unity.Mathematics;
 
-namespace TKPhysics.AutomaticDynamicBone.Runtime
+namespace NatanePhysics.AutomaticDynamicBone.Runtime
 {
 
     [DisallowMultipleComponent]
@@ -19,6 +19,19 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
         public float windForceScale=0f;
         public bool isDrawGizmo = false;
         public bool isOptimize = false;
+        
+        [Header("Advanced Systems (MagicaCloth2 Inspired)")]
+        [Tooltip("安定性向上システム")]
+        public ADBStabilitySystem stabilitySystem = new ADBStabilitySystem();
+        
+        [Tooltip("LODシステム")]
+        public ADBLODSystem lodSystem = new ADBLODSystem();
+        
+        [Tooltip("高度な風システムを使用")]
+        public bool useAdvancedWind = false;
+        
+        [Tooltip("高度な風ゾーン")]
+        public ADBAdvancedWind[] advancedWindZones;
        
 
         public ColliderCollisionType colliderCollisionType = ColliderCollisionType.Constraint;
@@ -45,7 +58,9 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
         private List<ColliderRead> tempColliderReads;
 
 
-        public float colliderSize=1;
+        [Range(0.1f, 2.0f)]
+        [Tooltip("グローバルコライダーサイズ。小さい値でより正確な判定、大きい値でより安定した判定")]
+        public float colliderSize = 0.5f;
 
      
 
@@ -79,6 +94,30 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
                 isInitialize = true;
                 bufferTime = bufferTime < 0.017f ? 0.017f : bufferTime;
                 isResetPoint = true;
+                
+                // 新システムの初期化
+                InitializeAdvancedSystems();
+            }
+        }
+        
+        private void InitializeAdvancedSystems()
+        {
+            // 安定性システムの初期化
+            if (stabilitySystem != null)
+            {
+                stabilitySystem.Initialize(transform.position, transform.rotation);
+            }
+            
+            // LODシステムの初期化
+            if (lodSystem != null)
+            {
+                lodSystem.Initialize(transform);
+            }
+            
+            // 高度な風システムの検索
+            if (useAdvancedWind && (advancedWindZones == null || advancedWindZones.Length == 0))
+            {
+                advancedWindZones = FindObjectsOfType<ADBAdvancedWind>();
             }
         }
 
@@ -142,12 +181,31 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
         private void Run(float inputDeltaTime)
         {
             if (!isInitialize) return;
+            
+            // LODシステムによるシミュレーションチェック
+            if (lodSystem != null)
+            {
+                var lodLevel = lodSystem.UpdateLOD(transform, inputDeltaTime);
+                if (!lodSystem.ShouldSimulate(inputDeltaTime))
+                {
+                    return;
+                }
+                
+                // LOD設定を適用
+                iteration = lodLevel.iterationCount;
+            }
 
             if (isResetPoint)
             {
                 isResetPoint = false;
                 RestoreRuntimePoint();
                 addForce+= UnityEngine.Random.insideUnitSphere * 1e-6f;
+                
+                // リセット後の安定化を開始
+                if (stabilitySystem != null)
+                {
+                    stabilitySystem.StartStabilization();
+                }
                 startVelocityDamp = 0;
                 return;
             }
@@ -157,7 +215,30 @@ namespace TKPhysics.AutomaticDynamicBone.Runtime
 
             scale =math.cmax((float3) transform.lossyScale);
             scale = math.max(scale, math.EPSILON);
-            addForce += ADBWindZone.getaddForceForce(transform.position) * windForceScale * deltaTime;
+            
+            // 風力の計算（高度な風システムまたは従来のシステム）
+            if (useAdvancedWind && advancedWindZones != null && advancedWindZones.Length > 0)
+            {
+                float3 advancedWindForce = ADBAdvancedWind.CombineWindForces(advancedWindZones, transform.position, Time.time);
+                addForce += (Vector3)advancedWindForce * windForceScale * deltaTime;
+            }
+            else
+            {
+                addForce += ADBWindZone.getaddForceForce(transform.position) * windForceScale * deltaTime;
+            }
+            
+            // 安定性システムの更新
+            if (stabilitySystem != null)
+            {
+                stabilitySystem.UpdateStabilization(deltaTime);
+                
+                // 高速移動時の減衰を適用
+                float fastMovementDamping = stabilitySystem.GetFastMovementDamping(transform.position, deltaTime);
+                deltaTime *= fastMovementDamping;
+                
+                // 振動抑制を適用
+                addForce = (Vector3)stabilitySystem.ApplyVelocityLimit(addForce);
+            }
             UpdateOverlapsCollider();
             UpdateDataPakage();
 
